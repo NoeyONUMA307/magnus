@@ -1,0 +1,15 @@
+services:
+  magnus:
+    build: .
+    ports:
+      - "3001:3001"
+    environment:
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      - CORS_ORIGIN=*
+    volumes:
+      - magnus-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  magnus-data:

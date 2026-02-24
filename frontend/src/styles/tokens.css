@@ -1,0 +1,103 @@
+/* ═══════════════════════════════════════════════════
+   NOTION-STYLE TOKEN ARCHITECTURE
+   Layered surface system: bg → surface → surface-2 → surface-3
+   ═══════════════════════════════════════════════════ */
+:root {
+  /* Base palette — light */
+  --bg:           #f7f6f3;
+  --surface:      #ffffff;
+  --surface-2:    #f1f0ec;
+  --surface-3:    #e8e7e2;
+  --surface-4:    #dddcd7;
+
+  /* Borders */
+  --border:       rgba(0,0,0,0.08);
+  --border-sub:   rgba(0,0,0,0.05);
+  --border-hover: rgba(0,0,0,0.14);
+
+  /* Text scale */
+  --text:         #191918;
+  --text-2:       #6b6a66;
+  --text-3:       #a8a7a2;
+  --text-4:       #c8c7c2;
+
+  /* Severity — warm, editorial palette */
+  --crit:         #c0392b;
+  --crit-bg:      rgba(192,57,43,0.07);
+  --crit-border:  rgba(192,57,43,0.14);
+  --high:         #b84c00;
+  --high-bg:      rgba(184,76,0,0.07);
+  --high-border:  rgba(184,76,0,0.14);
+  --med:          #8a6900;
+  --med-bg:       rgba(138,105,0,0.07);
+  --med-border:   rgba(138,105,0,0.14);
+  --low:          #1a6490;
+  --low-bg:       rgba(26,100,144,0.07);
+  --low-border:   rgba(26,100,144,0.14);
+  --ok:           #276245;
+  --ok-bg:        rgba(39,98,69,0.07);
+  --ok-border:    rgba(39,98,69,0.14);
+
+  /* Attack stream — always dark */
+  --stream-bg:      #0f0f0e;
+  --stream-surface: #161615;
+  --stream-border:  rgba(255,255,255,0.06);
+  --stream-dim:     #3d3d3b;
+  --stream-muted:   #6b6a66;
+  --stream-text:    #e8e6e1;
+  --stream-recon:   #74b9ff;
+  --stream-plan:    #fdcb6e;
+  --stream-exploit: #ff7675;
+  --stream-success: #55efc4;
+  --stream-code:    #a29bfe;
+
+  /* Spacing — Notion numeric scale */
+  --s-4:   4px;
+  --s-6:   6px;
+  --s-8:   8px;
+  --s-10:  10px;
+  --s-12:  12px;
+  --s-16:  16px;
+  --s-20:  20px;
+  --s-24:  24px;
+  --s-32:  32px;
+  --s-40:  40px;
+  --s-48:  48px;
+  --s-64:  64px;
+
+  /* Radius */
+  --r:     8px;
+  --r-sm:  5px;
+  --r-lg:  12px;
+  --r-xl:  16px;
+}
+
+[data-theme="dark"] {
+  --bg:           #111110;
+  --surface:      #191918;
+  --surface-2:    #222220;
+  --surface-3:    #2c2c2a;
+  --surface-4:    #363634;
+  --border:       rgba(255,255,255,0.07);
+  --border-sub:   rgba(255,255,255,0.04);
+  --border-hover: rgba(255,255,255,0.12);
+  --text:         #e8e6e1;
+  --text-2:       #8a8983;
+  --text-3:       #7a7a76;
+  --text-4:       #5a5a57;
+  --crit:         #ff6b6b;
+  --crit-bg:      rgba(255,107,107,0.18);
+  --crit-border:  rgba(255,107,107,0.35);
+  --high:         #ff9a57;
+  --high-bg:      rgba(255,154,87,0.18);
+  --high-border:  rgba(255,154,87,0.35);
+  --med:          #ffd166;
+  --med-bg:       rgba(255,209,102,0.15);
+  --med-border:   rgba(255,209,102,0.3);
+  --low:          #74b9ff;
+  --low-bg:       rgba(116,185,255,0.15);
+  --low-border:   rgba(116,185,255,0.3);
+  --ok:           #55efc4;
+  --ok-bg:        rgba(85,239,196,0.15);
+  --ok-border:    rgba(85,239,196,0.3);
+}
